@@ -1,14 +1,15 @@
 
 import java.time.LocalTime;
-public class Echantillion {
+
+public class Echantillon {
 	private String ID;
 	private String type;
-	private String priority;
+	private Priority priority;
 	private int analysisTime;
 	private LocalTime arrivalTime;
 	private String patientID;
 	
-	public Echantillion(String iD, String type, String priority, int analysisTime, LocalTime arrivalTime,
+	public Echantillon(String iD, String type, Priority priority, int analysisTime, LocalTime arrivalTime,
 			String patientID) {
 		super();
 		ID = iD;
@@ -38,10 +39,10 @@ public class Echantillion {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getPriority() {
+	public Priority getPriority() {
 		return priority;
 	}
-	public void setPriority(String priority) {
+	public void setPriority(Priority priority) {
 		this.priority = priority;
 	}
 	public int getAnalysisTime() {
@@ -60,7 +61,7 @@ public class Echantillion {
 	@Override
 	public String toString() {
 		return "Echantillion [ID=" + ID + ", type=" + type + ", priority=" + priority + ", analysisTime=" + analysisTime
-				+ ", arrivalTime=" + arrivalTime + ", patientID=" + patientID + "]";
+				+ ", arrivalTime=" + arrivalTime + ", patientID=" + patientID + "]\n";
 	}
 	
 }

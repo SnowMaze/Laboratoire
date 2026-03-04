@@ -7,6 +7,7 @@ public class Technicien {
 	private String speciality;
 	private LocalTime startTime;
 	private LocalTime endTime;
+	private LocalTime availableAT;
 	
 	public Technicien(String iD, String name, String speciality, LocalTime startTime, LocalTime endTime) {
 		ID = iD;
@@ -14,6 +15,7 @@ public class Technicien {
 		this.speciality = speciality;
 		this.startTime = startTime;
 		this.endTime = endTime;
+		this.availableAT=startTime;
 	}
 	
 	public String getID() {
@@ -51,5 +53,15 @@ public class Technicien {
 	public String toString() {
 		return "Technicien [ID=" + ID + ", Name=" + Name + ", speciality=" + speciality + ", startTime=" + startTime
 				+ ", endTime=" + endTime + "]";
+	}
+
+	public LocalTime getAvailableAt() {
+		
+		return this.availableAT;
+	}
+
+	public void setAvailableAt(LocalTime end) {
+		this.availableAT = end;
+		
 	}
 }
