@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,12 +84,16 @@ public class Schedule {
 			}
 		}
 		setTotaltime(total);
-		calculateConflicts();
+		calculateMetrics();
 	}
-	public void calculateConflicts() {
+	public void calculateMetrics() {
 
        int conflicts = 0;
-
+       LocalTime start = schedule.get(0).getStartTime();
+       LocalTime end = schedule.get(schedule.size()-1).getEndTime();
+       
+       float effic = getTotaltime()/Duration.between(start, end).toMinutes()*100;
+       setEfficiency(effic);
         for (int i = 0; i < schedule.size(); i++) {
             for (int j = i + 1; j < schedule.size(); j++) {
 
